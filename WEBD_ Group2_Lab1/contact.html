@@ -1,19 +1,20 @@
 <!-- 
   Name: Andrei Sorescu, Kenny Rajkumar
-  File: index.html 
-  Desc: HTML webpage that demonstrates the homepage for WEBD6201 - Lab 1. 
+  File: contact.html 
+  Desc: HTML form for the "Contact Us" page that allows the user to submit their input. 
   Date: February 11, 2022 
 -->
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Lab 1: Home</title>
+    <title>Lab 1: Contact Us</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "./Content/app.css">
     <script src="https://kit.fontawesome.com/29b92ba7c6.js" crossorigin="anonymous"></script>
     <script src="./Scripts/app.js"></script>
 
@@ -31,15 +32,44 @@
           <a id="projects" class="nav-item nav-link" href="#"><i class="fa-solid fa-grip"></i> Products</a>
           <a id="services" class="nav-item nav-link" href="#"><i class="fa-solid fa-bell"></i> Services</a>
           <a id="about" class="nav-item nav-link" href="#"><i class="fa-solid fa-circle-info"></i> About Us</a>
-          <a id="contact" class="nav-item nav-link" href="./contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          <a id="contact" class="nav-item nav-link" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
         </div>
       </div>
     </nav>
-
-    <div id = "homepage-text" class="bg-image d-flex justify-content-center align-items-center" 
+    <!-- div container for background and form -->
+    <div class="bg-image d-flex justify-content-center align-items-center" 
       style="
          background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
          height: 100vh">
+
+        <div class="card" style="width: 1000px; height: 700px;">
+            <div class="card-header">
+                Contact Us!
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <form>
+                        <div class="form-group">
+                        <label for="input-name">Name</label>
+                        <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                        <label for="input-email">Email address</label>
+                        <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                        <label for="input-contact">Contact Number</label>
+                        <input type="tel" class="form-control" id="input-contact" placeholder="Enter phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-message">Short Message</label>
+                            <textarea class="form-control" id="input-message" rows="7" placeholder="Enter a short message"></textarea>
+                        </div>
+                        <button id="submit" type="submit" class="btn btn-primary" onclick="redirect()">Submit</button>
+                    </form>
+                </blockquote>
+            </div>
+        </div>
     </div>
       
     <!-- Optional JavaScript -->
@@ -50,3 +80,4 @@
   </body>
 </html>
 <!DOCTYPE html>
+
