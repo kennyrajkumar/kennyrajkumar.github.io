@@ -1,5 +1,5 @@
 <!-- 
-  Name: Andrei Sorescu, Kenny Rajkumar
+  Name: Andrei Sorescu 100706779, Kenny Rajkumar 100616412
   File: contact.html 
   Desc: HTML form for the "Contact Us" page that allows the user to submit their input. 
   Date: February 11, 2022 
@@ -28,26 +28,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a id="home" class="nav-item nav-link active" href="#"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
-          <a id="projects" class="nav-item nav-link" href="#"><i class="fa-solid fa-grip"></i> Products</a>
-          <a id="services" class="nav-item nav-link" href="#"><i class="fa-solid fa-bell"></i> Services</a>
-          <a id="about" class="nav-item nav-link" href="#"><i class="fa-solid fa-circle-info"></i> About Us</a>
-          <a id="contact" class="nav-item nav-link" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
+          <a id="home" class="nav-item nav-link active" href="./index.html"><i class="fa-solid fa-house"></i> Home <span class="sr-only">(current)</span></a>
+          <a id="cnt-projects" class="nav-item nav-link" href="./products.html"><i class="fa-solid fa-grip"></i> Products</a>
+          <a id="services" class="nav-item nav-link" href="./services.html"><i class="fa-solid fa-bell"></i> Services</a>
+          <a id="about" class="nav-item nav-link" href="./about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+          <a id="cnt-contact" class="nav-item nav-link" href="./contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
         </div>
       </div>
     </nav>
-    <!-- div container for background and form -->
+    <!-- div container for background -->
     <div class="bg-image d-flex justify-content-center align-items-center" 
       style="
          background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
          height: 100vh">
 
         <div class="card" style="width: 1000px; height: 700px;">
-            <div class="card-header">
-                Contact Us!
+            <div id="cnt-header" class="card-header">
             </div>
+            <!-- div container for content box and form -->
             <div class="card-body">
-                <blockquote class="blockquote mb-0">
+                <blockquote id="cnt-body" class="blockquote mb-0">
                     <form>
                         <div class="form-group">
                         <label for="input-name">Name</label>
@@ -65,10 +65,33 @@
                             <label for="input-message">Short Message</label>
                             <textarea class="form-control" id="input-message" rows="7" placeholder="Enter a short message"></textarea>
                         </div>
-                        <button id="submit" type="submit" class="btn btn-primary" onclick="redirect()">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-primary" onclick="">Submit</button>
                     </form>
                 </blockquote>
             </div>
+            <script>
+              // Function that submits the contact form and clears the page before redirecting to the Index page.
+              // Values submitted are outputted into the console. 
+              function submitForm()
+              {
+                  var name = document.getElementById("input-name").value;
+                  var email = document.getElementById("input-email").value;
+                  var contact = document.getElementById("input-contact").value;
+                  var message = document.getElementById("input-message").value;
+
+                  console.log("Contact Info\nName: " + name + 
+                              "\nEmail: " + email + 
+                              "\nPhone Number: " + contact + 
+                              "\nMessage: " + message);
+
+                  location.href = "index.html";
+              }
+            </script>
+            <script>
+              // Creates event listener for submit button.
+              document.getElementById( "submit" ).addEventListener(
+                  "click", setTimeout(submitForm, 10000), false);
+            </script>
         </div>
     </div>
       
